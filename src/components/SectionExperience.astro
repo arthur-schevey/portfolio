@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon/components";
+import Section from "../layouts/Section.astro";
+import { getCollection, render } from 'astro:content';
+import MarkdownPreview from "./MarkdownPreview.astro";
+const experience = await getCollection('experience');
+experience.sort((a, b) => (a.filePath ?? "").localeCompare(b.filePath ?? ""));
+console.log(experience.length);
+
+---
+
+<Section title="Work Experience">
+    <ul class="daisy-timeline daisy-timeline-snap-icon max-md:daisy-timeline-compact daisy-timeline-vertical">
+        {experience.map(async (job) => {
+            const { Content } = await render(job)
+
+            return (
+            <li class="daisy-timeline-item">       
+                {!job.data.first && <hr />}  {/* <!-- Omit on first iteration --> */}
+                <div class="daisy-timeline-start !self-start">
+                    {job.data.image && (
+                        <div class="aspect-[4/3] w-64 p-8">
+                            <img
+                                src={job.data.image.src}
+                                alt={job.data.image.alt}
+                                class="rounded-lg shadow-md w-full h-full object-cover "
+                            />
+                        </div>
+                    )}
+                </div>
+                <div class="daisy-timeline-middle">
+                    <Icon name="ri:circle-fill" />
+                </div>  
+                <div class="daisy-timeline-end !self-start">
+                    
+                    <h3 class="text-lg font-black group/link">
+                        <span>
+                            {job.data.role} 
+                                @
+                                <a class="text-primary" href={job.data.company.url} title="hover title" target="_blank">{job.data.company.name}</a>
+                                <Icon name="ri:arrow-up-line" class="inline-block w-4 h-4 ml-1 transition-transform translate-y-px shrink-0 group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none rotate-45" aria-hidden="true"></Icon>
+                        </span>
+                    </h3>
+
+                    <div class="font-bold">
+                        {job.data.subheading}
+                    </div>
+
+                    <div class=" flex flex-col gap-4">
+                        <MarkdownPreview Content={Content}/>
+                    </div>
+                    
+                </div>
+                <hr />
+            </li>
+          )
+        }
+        
+)}
+    </ul>
+
+</Section>

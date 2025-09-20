@@ -1,0 +1,49 @@
+---
+const { Content } = Astro.props;
+
+---
+
+<div>
+  <div class="expand-container relative transition-all duration-300 max-h-32 overflow-hidden" data-expanded="false">
+    <article class="prose-sm">
+      <Content />
+    </article>
+
+    <!-- Fade overlay when collapsed -->
+    <div class="fade-overlay absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-base-100 to-transparent pointer-events-none"></div>
+  </div>
+
+  <button class="expand-button mt-2 text-blue-600 hover:underline text-sm font-medium">
+    <span class="expand-text">Show more</span>
+  </button>
+</div>
+
+
+<style>
+  .expand-container[data-expanded="true"] {
+    max-height: none;
+  }
+
+  .expand-container[data-expanded="true"] .fade-overlay {
+    display: none;
+  }
+</style>
+
+<script>
+  const expandButtons = document.querySelectorAll('.expand-button');
+
+  expandButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const container = button.previousElementSibling as HTMLElement | null;
+      if (!container) return;      
+
+      const isExpanded = container.dataset.expanded === 'true';
+      container.dataset.expanded = isExpanded ? 'false' : 'true';
+
+      const expandText = button.querySelector('.expand-text');
+      if (expandText) {
+        expandText.textContent = isExpanded ? 'Show more' : 'Show less';
+      }
+    });
+  });
+</script>

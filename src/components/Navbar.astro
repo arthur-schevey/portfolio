@@ -1,0 +1,42 @@
+---
+import { Icon } from 'astro-icon/components';
+import ThemeSwitch from './ThemeSwitch.astro';
+---
+
+<!-- Navbar is sticky -->
+<div class="daisy-navbar rounded-box bg-base-300 mb-8 sticky top-6 z-50 shadow-md">
+
+    <!-- Nav links -->
+    <div class="flex-1">
+      <a class="daisy-btn daisy-btn-ghost bg-primary text-neutral text-2xl">
+        <Icon name="bi:code-slash" />
+      </a>
+      <a class="daisy-btn daisy-btn-ghost text-base font-bold" href="#projects">Projects</a>
+      <a class="daisy-btn daisy-btn-ghost text-base font-bold" href="#grad">Grad</a>
+    </div>
+
+    <!-- Social links + theme change -->
+    <div class="flex-none">
+      <a
+        class="daisy-btn daisy-btn-square daisy-btn-ghost text-xl"
+        href="https://github.com/arthur-schevey"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon name="bi:github" />
+      </a>
+
+      <a
+        class="daisy-btn daisy-btn-square daisy-btn-ghost text-xl"
+        href="https://www.linkedin.com/in/arthur-schevey/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon name="bi:linkedin" />
+      </a>
+      
+      <div class="daisy-divider daisy-divider-horizontal m-0"></div>
+      
+      <ThemeSwitch/>
+    </div>
+</div>

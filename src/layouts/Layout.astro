@@ -1,22 +1,33 @@
+---
+import '../styles/globals.css'
+---
+
 <!doctype html>
-<html lang="en">
+<html data-theme="dark" lang="en">
 	<head>
+
+		<script is:inline>
+			// This script prevents the FART effect.
+			if (localStorage.getItem("theme") === null) {
+				document.documentElement.setAttribute("data-theme", "light");
+			} else
+				document.documentElement.setAttribute(
+				"data-theme",
+				localStorage.getItem("theme")
+				);
+		</script>
+		<script>
+			import { themeChange } from 'theme-change';
+			themeChange();
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/src/assets/icon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-	<body>
+	<body class="relative font-sans">
+		<nav class="sticky dev"></nav>
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
