@@ -5,6 +5,7 @@ import icon from 'astro-icon';
 
 export default defineConfig({
   vite: {
-    plugins: [icon(), tailwind()],
+    plugins: [tailwind()],
   },
+  integrations: [icon()]
 })

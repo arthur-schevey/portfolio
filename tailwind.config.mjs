@@ -31,8 +31,6 @@ export default {
 	variants: {
 	  extend: {},
 	},
-	plugins: [require('daisyui'), require('@tailwindcss/typography')],
-
 	daisyui: {
 		prefix: "daisy-", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
 		themes: [
