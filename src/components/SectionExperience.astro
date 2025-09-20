@@ -9,7 +9,7 @@ console.log(experience.length);
 
 ---
 
-<Section title="Work Experience">
+<Section title="Work Experience" id="experience">
     <ul class="daisy-timeline daisy-timeline-snap-icon max-md:daisy-timeline-compact daisy-timeline-vertical">
         {experience.map(async (job) => {
             const { Content } = await render(job)

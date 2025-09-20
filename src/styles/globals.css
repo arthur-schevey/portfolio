@@ -35,3 +35,7 @@ layer(base);
   --color-neutral: #f9e1f1;
   --font-family: 'Courier New', monospace;
 }
+
+html {
+  scroll-behavior: smooth;
+}
