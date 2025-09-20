@@ -17,9 +17,9 @@ console.log(experience.length);
             return (
             <li class="daisy-timeline-item">       
                 {!job.data.first && <hr />}  {/* <!-- Omit on first iteration --> */}
-                <div class="daisy-timeline-start !self-start">
+                <div class="daisy-timeline-start self-start!">
                     {job.data.image && (
-                        <div class="aspect-[4/3] w-64 p-8">
+                        <div class="aspect-4/3 w-64 p-8">
                             <img
                                 src={job.data.image.src}
                                 alt={job.data.image.alt}
@@ -31,7 +31,7 @@ console.log(experience.length);
                 <div class="daisy-timeline-middle">
                     <Icon name="ri:circle-fill" />
                 </div>  
-                <div class="daisy-timeline-end !self-start">
+                <div class="daisy-timeline-end self-start!">
                     
                     <h3 class="text-lg font-black group/link">
                         <span>

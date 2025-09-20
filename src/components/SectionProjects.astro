@@ -15,9 +15,9 @@ projects.sort((a, b) => (a.filePath ?? "").localeCompare(b.filePath ?? ""));
             return (
             <li class="daisy-timeline-item">       
                 {!project.data.first && <hr />}  {/* <!-- Omit on first iteration --> */}
-                <div class="daisy-timeline-end !self-start">
+                <div class="daisy-timeline-end self-start!">
                     {project.data.image && (
-                        <div class="aspect-[4/3] w-full p-8">
+                        <div class="aspect-4/3 w-full p-8">
                             <img
                                 src={project.data.image.src}
                                 alt={project.data.image.alt}
@@ -29,7 +29,7 @@ projects.sort((a, b) => (a.filePath ?? "").localeCompare(b.filePath ?? ""));
                 <div class="daisy-timeline-middle">
                     <Icon name="ri:circle-fill" />
                 </div>  
-                <div class="daisy-timeline-start !self-start">
+                <div class="daisy-timeline-start self-start!">
                     
                     <h3 class="text-lg font-black group/link">
                         <span>
