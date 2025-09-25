@@ -10,9 +10,9 @@ technologies:
 - title: "Ratatui"
 ---
 
-This project is a command-line spreadsheet application built in Rust, combining an interpreted programming language with a terminal-based spreadsheet interface. Users can define cell expressions, reference other cells, and leverage programming constructs like conditionals and loops to manipulate data dynamically.  
+This project is a command-line spreadsheet application built in Rust, as an exercise to building an interpreted programming language; from lexing and parsing → to evaluation and error handling.
 
-It features robust error handling and a responsive terminal UI using ratatui, allowing users to explore spreadsheet logic without leaving the terminal.  
+Built with existing tools like Excel in mind, users can define cell expressions, reference other cells, and leverage programming constructs (conditionals/loops) to manipulate data dynamically—all in a terminal.
 
 Key features include:  
 - Excel-like formula support for cell references and calculations  
@@ -20,4 +20,4 @@ Key features include:
 - CLI visualization for interactive navigation and editing  
 - Comprehensive error handling for syntax and runtime issues  
 
-This project demonstrates the power of combining systems programming with domain-specific language design to deliver a lightweight, functional spreadsheet environment.
+This project was a powerful learning experience that served as a foundation for my learning for giving me a deeper understanding of programming theory.

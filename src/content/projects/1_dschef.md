@@ -18,12 +18,12 @@ technologies:
 - title: "Zustand"
 ---
 
-DSChef is a graph and tree visualization utility designed to make complex hierarchical data intuitive and interactive. Users can construct, manipulate, and explore binary trees, general trees, and graphs with a live, dynamic interface.
+DSChef is a graph and tree visualization utility designed to make designing complex data structures (especially for test cases!) intuitive and interactive. Users can construct, manipulate, and explore binary trees and graphs with a live, dynamic interface.
 
 Key features include:  
-- Real-time node creation, editing, and traversal visualization  
+- Real-time node creation, editing
 - Support for multiple graph types (directed, undirected, weighted)  
-- Export/import functionality for saving and sharing structures  
-- Undo/redo
+- Export/import functionality for saving and sharing structures, supporting several formats
+- Undo/redo/local storage persistence
 
-DSChef emphasizes clarity and usability in representing data structures that are typically abstract and difficult to interact with visually.
+DSChef emphasizes clarity and usability to support students and educators.

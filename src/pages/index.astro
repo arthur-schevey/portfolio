@@ -5,33 +5,44 @@ import SectionProjects from '../components/SectionProjects.astro';
 import SectionExperience from '../components/SectionExperience.astro';	
 import GardenCard from '../components/GardenCard.astro';
 import SectionWriteups from '../components/SectionWriteups.astro';
+import Section from '../layouts/Section.astro';
 ---
 
 <Layout>
   <main class="relative h-full max-w-7xl p-8 max-sm:py-16 md:min-h-screen md:p-16">
 	
-	<Navbar />
-	
-	<div class="slide-enter ease-in flex place-content-between ">
-		<div class="daisy-avatar w-48 h-48 rounded-box shadow-[6px_6px_0_0_var(--color-primary)]">
-			<div class="rounded-box">
-				<img src="/images/icon.svg" />
+		<Navbar />
+		
+		<div class="slide-enter ease-in flex place-content-between ">
+			<div class="daisy-avatar w-48 h-48 rounded-box shadow-[6px_6px_0_0_var(--color-primary)]">
+				<div class="rounded-box">
+					<img src="/images/icon.svg" />
+				</div>
 			</div>
-		</div>
-		<div class="daisy-card">
-			<div class="daisy-card-body">
-				<h1 class="daisy-card-title leading-tight font-heading font-extrabold text-4xl bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">Arthur Schevey</h1>
-				<p class="text-base">A security-focused software developer with a focus on learning fast, iterating often, and building tools that are useful. My strengths lie in building beautiful frontends, developing secure systems, and creating educational resources—documentation, playgrounds, and tools—grounded in learning-theory.</p>
-				
+			<div class="daisy-card">
+				<div class="daisy-card-body">
+					<h1 class="daisy-card-title leading-tight font-heading font-extrabold text-4xl bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">Arthur Schevey</h1>
+					<p class="text-base">A security-focused software developer with a focus on learning fast, iterating often, and building tools that are useful. My strengths lie in building beautiful frontends, developing secure systems, and creating educational resources—documentation, playgrounds, and tools—grounded in learning-theory.</p>
+					
+				</div>
 			</div>
+
+			<GardenCard />
 		</div>
 
-		<GardenCard />
-	</div>
+		<SectionProjects />
+		<SectionExperience />
+		<SectionWriteups />
 
-	<SectionProjects />
-	<SectionExperience />
-	<SectionWriteups />
+
+		<div class="daisy-divider"/>
+		<Section>
+			<div class="flex justify-center items-center w-full h-160">
+				<img class="w-20 animate-bounce cursor-help" src="/images/magic-book.png" />
+			</div>
+		</Section>
+		<div class="daisy-divider"/>
+
 
   </main>
 </Layout>

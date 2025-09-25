@@ -1,5 +1,5 @@
 ---
-role: "IT Support"
+role: "IT Support Specialist"
 company:
   name: "James Madison University"
   url: "https://www.jmu.edu"

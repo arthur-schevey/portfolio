@@ -8,12 +8,12 @@ import ThemeSwitch from './ThemeSwitch.astro';
 
     <!-- Nav links -->
     <div class="flex-1">
-      <a class="daisy-btn daisy-btn-ghost bg-primary text-neutral text-2xl" href="#">
+      <a class="daisy-btn daisy-btn-ghost text-neutral text-2xl navlink" href="#">
         <Icon name="bi:code-slash" />
       </a>
-      <a class="daisy-btn daisy-btn-ghost text-base font-bold" href="#projects">Projects</a>
-      <a class="daisy-btn daisy-btn-ghost text-base font-bold" href="#experience">Work Experience</a>
-      <a class="daisy-btn daisy-btn-ghost text-base font-bold" href="#writeups">Writeups</a>
+      <a class="daisy-btn daisy-btn-ghost text-base font-bold navlink" href="#projects">Projects</a>
+      <a class="daisy-btn daisy-btn-ghost text-base font-bold navlink" href="#experience">Work Experience</a>
+      <a class="daisy-btn daisy-btn-ghost text-base font-bold navlink" href="#writeups">Writeups</a>
     </div>
 
     <!-- Social links + theme change -->
@@ -41,3 +41,34 @@ import ThemeSwitch from './ThemeSwitch.astro';
       <ThemeSwitch/>
     </div>
 </div>
+
+<script>
+  const navLinks = document.querySelectorAll(".daisy-navbar .navlink");
+  const sections = document.querySelectorAll("section[id]");  
+  const offset = 150;
+
+  function onScroll() {
+    const scrollY = window.scrollY;
+    let activeId: string | null = null;
+
+    for (const section of sections) {
+      const top = (section as HTMLElement).offsetTop;
+      if (scrollY >= top - offset) { 
+        activeId = section.id;
+      }
+    }
+
+    navLinks.forEach((link) => {
+      if (activeId) {
+        // match section links
+        link.classList.toggle("bg-primary", link.getAttribute("href") === `#${activeId}`);
+      } else {
+        // top of page → home link
+        link.classList.toggle("bg-primary", link.getAttribute("href") === "#");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", onScroll);
+  window.addEventListener("load", onScroll); // highlight correct link on page load
+</script>

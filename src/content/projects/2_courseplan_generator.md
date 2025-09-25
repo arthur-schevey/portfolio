@@ -17,12 +17,12 @@ technologies:
 
 This course plan generator automates degree planning by analyzing a student's transcript and curriculum requirements to generate optimized class schedules up to graduation. By combining a heuristic-based approach with a topological sort algorithm, it ensures that prerequisites, elective choices, and degree constraints are satisfied.  
 
-The biggest challenge was modeling complex curriculum rules, such as "choose 2 out of 5 classes," requiring a custom approach to represent and process flexible degree requirements.  
+The biggest challenge was modeling complex curriculum rules, such as "choose 2 out of these 5 classes" or "take this path or that one," requiring a custom approach to represent and process flexible degree requirements.  
 
 Key features include:  
 - Transcript parser to import completed courses automatically  
-- Curriculum selection including majors, minors, and areas of interest  
+- Curriculum selection including majors, minors, and areas of interest (certifications!)
 - Multi-schedule generation for students to explore different pathways  
-- Web interface built with Django and Bootstrap for accessibility  
+- Web interface built with Django and Bootstrap
 
-This tool provides students with actionable, structured options for completing their degree efficiently and with flexibility.
+This tool provides students with actionable, structured options for completing their degree with just a few clicks.
