@@ -11,14 +11,27 @@ import '../styles/globals.css'
 			if (localStorage.getItem("theme") === null) {
 				document.documentElement.setAttribute("data-theme", "light");
 			} else
-				document.documentElement.setAttribute(
-				"data-theme",
-				localStorage.getItem("theme")
-				);
+				theme = localStorage.getItem("theme")
+				document.documentElement.setAttribute("data-theme", theme);
+				if (theme === "dark") document.documentElement.classList.add("dark");
 		</script>
 		<script>
 			import { themeChange } from 'theme-change';
 			themeChange();
+
+			const root = document.documentElement;
+
+			// Observes daisyUIs "data-theme" to add a corresponding class="dark" for tailwind to use
+			const observer = new MutationObserver(() => {
+				const t = root.getAttribute("data-theme");
+				if (t === "dark") root.classList.add("dark");
+				else root.classList.remove("dark");
+			});
+
+			observer.observe(root, {
+				attributes: true,
+				attributeFilter: ["data-theme"],
+			});
 		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />

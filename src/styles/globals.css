@@ -5,13 +5,13 @@ layer(base);
 
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *)); /* tailwinds new way of saying "darkMode: class" */
 @plugin 'daisyui' {
   prefix: daisy-;
 };
 
 @theme {
   --font-sans: 'Nunito', sans-serif;
-  /* --shadow-base:  */
 };
 
 @plugin "daisyui/theme" {
@@ -27,7 +27,6 @@ layer(base);
 
 @plugin "daisyui/theme" {
   name: "dark";
-  default: true;
   --color-primary: #ff9a2e;
   --color-secondary: #ffe6c7;
   --color-accent: #db5451;
